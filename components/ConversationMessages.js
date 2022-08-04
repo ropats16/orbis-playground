@@ -91,13 +91,17 @@ export function ConversationMessages() {
                                         borderRadius="50%"
                                         src="/defaultPFP.jpeg" alt="profile picture" />
                                 }
-                                <Box
+                                <Flex
+                                    direction='column'
                                     p={2}
                                     my={1}
                                     borderRadius={10}
                                     bg='blue.600'
                                     fontSize='sm'
-                                >{message.content}</Box>
+                                >
+                                    {message.creator_details.profile?.username && <Text fontSize={7} color='whiteAlpha.700'>{message.creator_details.profile.username}</Text>}
+                                    <Text>{message.content}</Text>
+                                </Flex>
                                 <Box fontSize={8}>{new Date(message.timestamp * 1000).toLocaleDateString("en-GB")}</Box>
                             </Flex>
                         )

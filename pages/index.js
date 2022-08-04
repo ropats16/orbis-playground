@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Divider, Flex } from '@chakra-ui/react';
+import { Divider, Flex, Heading } from '@chakra-ui/react';
 import styles from '../styles/Home.module.css'
 import { useEffect, useState, useContext } from 'react';
 
@@ -24,10 +24,14 @@ export default function Home() {
                 <Header />
             </header>
             <Divider />
-            <Flex as='main'>
-                <ConversationButtons />
-                <ConversationBox />
-            </Flex>
+            {user ?
+                <Flex as='main'>
+                    <ConversationButtons />
+                    <ConversationBox />
+                </Flex>
+                :
+                <Heading as='h2' fontSize='lg' m={5}>Please connect your wallet!</Heading>
+            }
         </div >
     )
 }

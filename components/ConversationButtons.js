@@ -95,7 +95,7 @@ export function ConversationButtons() {
                     <Button colorScheme='cyan' key={index} onClick={() => { setCurrentConversationDetails(conversationsList[index]) }}>{conversation.content.name ? conversation.content.name : getTruncatedDID(conversation.content.recipients[0], 5)}</Button>
                 )
             })}
-            <Button colorScheme='purple' onClick={getOrbisConversations}>Get Conversations</Button>
+            {/* <Button colorScheme='purple' onClick={getOrbisConversations}>Get Conversations</Button> */}
             <Divider />
             <Button onClick={onOpen}>Create Conversation</Button>
 
