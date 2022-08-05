@@ -25,7 +25,8 @@ export default function Home() {
             </header>
             <Divider />
             {user ?
-                <Flex as='main'>
+                <Flex
+                    as='main'>
                     <ConversationButtons />
                     <ConversationBox />
                 </Flex>

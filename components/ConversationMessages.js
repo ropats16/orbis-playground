@@ -60,7 +60,10 @@ export function ConversationMessages() {
         <Flex
             direction='column'>
             <Box
-                maxH='200px'
+                maxH='500px'
+                minH='200px'
+                maxW='max'
+                minW='300px'
                 overflow='auto'>
                 <Flex
                     direction='column'
@@ -102,7 +105,7 @@ export function ConversationMessages() {
                                     {message.creator_details.profile?.username && <Text fontSize={7} color='whiteAlpha.700'>{message.creator_details.profile.username}</Text>}
                                     <Text>{message.content}</Text>
                                 </Flex>
-                                <Box fontSize={8}>{new Date(message.timestamp * 1000).toLocaleDateString("en-GB")}</Box>
+                                <Box fontSize={8}>{new Date(message.timestamp * 1000).toDateString("en-GB")}</Box>
                             </Flex>
                         )
                     })}
